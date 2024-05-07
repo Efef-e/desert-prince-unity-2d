@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
 
     public GameObject groundCheck;
     public LayerMask groundLayer;
+
+    public Transform attackPoint;
+    public float attackDistance;
+    public LayerMask enemyLayers;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -102,11 +107,23 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Attack1");
         }
+        else if (numb == 1)
+        {
+            anim.SetTrigger("Attack2");
+        }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyStats>().TakeDamage(damage);
+        }
 
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.transform.position, groundCheckRadius);
+        Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
     }
 }

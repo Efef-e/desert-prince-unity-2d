@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinBank : MonoBehaviour
 {
 
     public int bank;
+    public Text bankText;
     public static CoinBank instance;
 
     private void Awake()
@@ -18,7 +20,7 @@ public class CoinBank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        bankText.text = "X" + bank.ToString();
     }
 
     // Update is called once per frame
@@ -29,5 +31,6 @@ public class CoinBank : MonoBehaviour
     public void Money(int coinCollected)
     {
         bank += coinCollected;
+        bankText.text = "X" + bank.ToString();
     }
 }

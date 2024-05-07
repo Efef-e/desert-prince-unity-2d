@@ -7,6 +7,8 @@ public class EnemyStats : MonoBehaviour
 
     public float maxHealth;
     private float currentHealth;
+    public GameObject deathEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class EnemyStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -8359,6 +8359,7 @@ GameObject:
   - component: {fileID: 1697083146}
   - component: {fileID: 1697083145}
   - component: {fileID: 1697083149}
+  - component: {fileID: 1697083150}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -8380,6 +8381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   deathEffect: {fileID: 1036871344199713767, guid: 4c3980fc880197248bebe8b2c3d6cad2, type: 3}
+  timer: 0.5
 --- !u!61 &1697083146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8513,6 +8515,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1697083150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697083144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cc9319bf00cbe478dcd807574be489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  white: {fileID: 2100000, guid: aee718c685aff36498f4d59f7fa816a3, type: 2}
 --- !u!1 &2059759614
 GameObject:
   m_ObjectHideFlags: 0

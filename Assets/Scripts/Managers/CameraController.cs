@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
     public Transform room;
     public Transform activeRoom;
 
+    public float dampSpeed = 3f;
+
     public static CameraController instance;
 
     [Range(-5, 5)]
@@ -42,7 +44,8 @@ public class CameraController : MonoBehaviour
         Mathf.Clamp(player.position.y, minPosY, maxPosX),
         Mathf.Clamp(player.position.z, -10, -10));
 
-        transform.position = new Vector3(clampedPos.x, clampedPos.y, clampedPos.z);
+        Vector3 smoothPos = Vector3.Lerp(transform.position, clampedPos, dampSpeed * Time.deltaTime);
+        transform.position = smoothPos;
 
     }
 }

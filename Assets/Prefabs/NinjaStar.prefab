@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4425198094713922220}
   - component: {fileID: 2185423058129541061}
   - component: {fileID: 1867683453578372494}
+  - component: {fileID: 2795741218140260699}
   m_Layer: 0
   m_Name: NinjaStar
   m_TagString: Untagged
@@ -161,6 +162,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b912b38895c3044e918f979838d5ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3.5
   damage: 10
   player: {fileID: 4126894345796200197, guid: 8aade6834acfa2d458f160b9286d2d8b, type: 3}
+--- !u!114 &2795741218140260699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258122073367238928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623a987e990152640bcf10ba385636a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3

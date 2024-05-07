@@ -33,6 +33,7 @@ public class NinjaStar : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyStats>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }

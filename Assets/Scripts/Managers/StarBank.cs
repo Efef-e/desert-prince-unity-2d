@@ -28,7 +28,7 @@ public class StarBank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        bankText.text = "x" + bankStar.ToString();
     }
 
     public void Collect(int starCollected)

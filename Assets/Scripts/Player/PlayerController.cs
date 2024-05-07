@@ -64,9 +64,14 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+            if (StarBank.instance.bankStar > 0)
+            {
+                Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+                StarBank.instance.bankStar -= 1;
+            }
+
         }
 
     }

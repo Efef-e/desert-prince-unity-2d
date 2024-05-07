@@ -91,7 +91,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 if (!isWaiting)
                 {
-                    rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
+                    rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
                     anim.SetBool("Idle", false);
                 }
 

@@ -11,12 +11,18 @@ public class EnemyStats : MonoBehaviour
     public float timer;
 
     HitEffect effect;
+    Rigidbody2D rb;
+
+    public float knockBackForceX, knockBackForceY;
+
+    public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         effect = GetComponent<HitEffect>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,6 +34,17 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+
+
+        if (player.position.x < transform.position.x)
+        {
+            rb.AddForce(new Vector2(knockBackForceX, knockBackForceY), ForceMode2D.Force);
+        }
+        else
+        {
+            rb.AddForce(new Vector2(-knockBackForceX, knockBackForceY), ForceMode2D.Force);
+        }
+
         GetComponent<SpriteRenderer>().material = effect.white;
         StartCoroutine(BackToNormal());
 

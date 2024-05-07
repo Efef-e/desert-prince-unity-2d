@@ -8360,6 +8360,7 @@ GameObject:
   - component: {fileID: 1697083145}
   - component: {fileID: 1697083149}
   - component: {fileID: 1697083150}
+  - component: {fileID: 1697083151}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -8382,6 +8383,8 @@ MonoBehaviour:
   maxHealth: 100
   deathEffect: {fileID: 1036871344199713767, guid: 4c3980fc880197248bebe8b2c3d6cad2, type: 3}
   timer: 0.5
+  knockBackForceX: 50
+  knockBackForceY: 50
 --- !u!61 &1697083146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8529,6 +8532,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   original: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   white: {fileID: 2100000, guid: aee718c685aff36498f4d59f7fa816a3, type: 2}
+--- !u!50 &1697083151
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697083144}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &2059759614
 GameObject:
   m_ObjectHideFlags: 0

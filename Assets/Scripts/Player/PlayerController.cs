@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public float attackDistance;
     public LayerMask enemyLayers;
     public float damage;
+
+    public GameObject ninjaStar;
+    public Transform firePoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,7 @@ public class PlayerController : MonoBehaviour
                 nextAttack = Time.time + 1f / attackRate;
             }
         }
+        Shoot();
     }
     private void FixedUpdate()
     {
@@ -56,6 +60,15 @@ public class PlayerController : MonoBehaviour
         movementDirection = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(movementDirection * speed, rb.velocity.y);
         anim.SetFloat("runSpeed", Mathf.Abs(movementDirection * speed));
+    }
+
+    public void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+        }
+
     }
 
     void CheckAnimations()

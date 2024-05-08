@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     private float movementDirection;
     public float speed;
     public float JumpPower;
@@ -26,6 +27,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject ninjaStar;
     public Transform firePoint;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
